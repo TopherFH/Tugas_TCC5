@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Notes</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #a18cd1, #fbc2eb);
+            color: #333;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        h1 {
+            color: #673ab7;
+        }
+
+        .colorful-form input, .colorful-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 2px solid #673ab7;
+            border-radius: 6px;
+            background: #f3e5f5;
+        }
+
+        .btn-save {
+            width: 100%;
+            padding: 12px;
+            background: #673ab7;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .view-notes, .back-home {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #ff4081;
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .notes-list .note {
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            border-left: 5px solid white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fas fa-sticky-note"></i> Daily Notes</h1>
+        
+        <div id="formSection">
+            <form id="noteForm" class="note-form colorful-form">
+                <input type="hidden" id="noteId">
+                <input type="text" id="judul" placeholder="Enter Note Title" required>
+                <textarea id="konten" placeholder="Type your notes here..." required></textarea>
+                <button type="submit" class="btn-save"><i class="fas fa-save"></i> Save</button>
+            </form>
+            <button onclick="showNotes()" class="view-notes">View Notes</button>
+        </div>
+
+        <div id="notesSection" style="display: none;">
+            <div id="notesList" class="notes-list"></div>
+            <button onclick="showForm()" class="back-home">Back to Input</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:3000/users';
+const API_URL = 'https://notes-be075-981623652580.us-central1.run.app';
 
 function showNotes() {
     document.getElementById('formSection').style.display = 'none';

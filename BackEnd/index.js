@@ -1,16 +1,19 @@
-import express from "express"
-import cors from "cors"
-import Route from "./route/Route.js";
+import express from "express";
+import cors from "cors";
+import { json } from "sequelize";
+import router from "./route/NoteRoute.js"
+import UserRoutes from "./route/UserRoute.js";
+import "./model/UserModel.js";
+import dotenv from "dotenv";
+import cookieParser from "cookie-parser"; 
 
-const app = express() 
-app.use(cors())
-app.use(express.json())
-app.use(Route)
+dotenv.config();
+const app = express();
 
-import db from "./config/database.js"; // Sesuaikan path database.js
+app.use(cors({credentials: true, origin: 'http://127.0.0.1:5500'}));
+app.use(cookieParser());
+app.use(express.json());
+app.use(router);
+app.use(UserRoutes);
 
-db.authenticate()
-  .then(() => console.log("Database connected successfully!"))
-  .catch((err) => console.error("Database connection error:", err));
-  
-app.listen(3000, ()=> console.log("Server has been running now!"))
+app.listen(3000, ()=> console.log('server up and running'));

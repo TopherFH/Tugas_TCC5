@@ -1,27 +1,56 @@
+GET https://notes-be075-981623652580.us-central1.run.app/notes
+
+###
+GET http://localhost:3000/notes/18
+
+###
+POST http://localhost:3000/notes
+Content-Type:  application/json
+
+{
+    "judul": "halo2",
+    "konten": "yapping"
+}
+
+###
+PATCH  http://localhost:3000/notes/21
+Content-Type:  application/json
+
+{
+    "judul": "windah",
+    "konten": "batubara"
+}
+
+###
+DELETE http://localhost:3000/notes/2
+
+
+###
 GET http://localhost:3000/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoiMTIzNEBnbWFpbC5jb20iLCJpYXQiOjE3NDc1NjM1NzMsImV4cCI6MTc0NzU2MzU4OH0.Pubprwnn8Xd2rFEau7OinmYdn6PEn2GM_g-e1JDUiNU
 
 ###
-
-GET http://localhost:3000/users/1
-
-###
-
 POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-"name": "Kehidupan", "notes": "Sakitttnyaaaa"
-}
-
-### 
-
-PATCH  http://localhost:3000/users/1 
-Content-Type: application/json
-
-{
-"name": "ehmasa", "notes": "hah"
+    "username": "windah1234",
+    "email": "1234@gmail.com",
+    "password": "batubara",
+    "confPassword": "batubara"
 }
 
 ###
+POST http://localhost:3000/login
+Content-Type: application/json
 
-DELETE http://localhost:3000/users/1
+{
+    "email": "1234@gmail.com",
+    "password": "batubara"
+}
+
+###
+GET http://localhost:3000/token
+
+###
+DELETE http://localhost:3000/logout

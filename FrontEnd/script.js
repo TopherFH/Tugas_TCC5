@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-const API_URL = 'https://notes-be075-981623652580.us-central1.run.app/users';
-=======
 const API_URL = 'https://notes-be075-981623652580.us-central1.run.app';
 const token = localStorage.getItem('token');
 
@@ -152,7 +149,6 @@ function editNote(id, judul, konten) {
         behavior: 'smooth'
     });
 }
->>>>>>> 3e99934 (Update Tugas 7)
 
 function showNotes() {
     document.getElementById('formSection').style.display = 'none';
